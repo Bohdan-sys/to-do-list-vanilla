@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Main page"
+})
+
+<body>
+    @@include('html/header.html', {
+    "title": "To Do List"
+    })
+    <main>
+        <section class="section">
+            <div class="container">
+                @@include('html/form.html')
+                @@include('html/list.html')
+            </div>
+        </section>
+
+    </main>
+    @@include('html/footer.html')
+    <script src="./js/script.min.js"></script>
+</body>
+
+</html>

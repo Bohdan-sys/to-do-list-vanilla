@@ -1,0 +1,57 @@
+@mixin mq-sm 
+    @media ($mq-query-sm)
+        @content
+@mixin mq-md 
+    @media ($mq-query-md)
+        @content
+@mixin mq-lg 
+    @media ($mq-query-lg)
+        @content
+@mixin mq-xl 
+    @media ($mq-query-xl)
+        @content
+
+@mixin mq-till-sm
+    @media ($mq-query-till-sm)
+        @content
+@mixin mq-till-md
+    @media ($mq-query-till-md)
+        @content
+@mixin mq-till-lg
+    @media ($mq-query-till-lg)
+        @content
+@mixin mq-till-xl
+    @media ($mq-query-till-xl)
+        @content
+
+@mixin mq-adaptive($separator: '-', $with-initial: true)
+    @if $with-initial
+        @content
+        &#{$separator}sm
+            +mq-sm
+                @content
+        &#{$separator}md
+            +mq-md
+                @content
+        &#{$separator}lg
+            +mq-lg
+                @content
+        &#{$separator}xl
+            +mq-xl
+                @content
+
+@mixin mq-adaptive-till($separator: '-', $with-initial: true)
+    @if $with-initial
+        @content
+        &#{$separator}sm
+            +mq-till-sm
+                @content
+        &#{$separator}md
+            +mq-till-md
+                @content
+        &#{$separator}lg
+            +mq-till-lg
+                @content
+        &#{$separator}xl
+            +mq-till-xl
+                @content

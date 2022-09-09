@@ -1,0 +1,40 @@
+%container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 40px;
+    width: 100%;
+
+    @include mq-till-md() {
+        padding: 20px;
+    }
+}
+
+%container-lg {
+    max-width: 1260px;
+}
+
+%container-sm {
+    max-width: 980px;
+}
+
+%container-fluid {
+    max-width: 1920px;
+    padding: 0;
+}
+
+.container {
+    @extend %container;
+
+    &.is-fluid {
+        @extend %container-fluid;
+    }
+
+    &.is-lg {
+        @extend %container-lg;
+    }
+
+    &.is-sm {
+        @extend %container-sm;
+    }
+}

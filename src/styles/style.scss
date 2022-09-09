@@ -1,0 +1,13 @@
+@import './base/nullstyle.scss', './base/colors.scss', './base/fonts.scss', './base/media/index.sass', './base/container.scss', './components/form.scss',
+'./components/list.scss', './components/card.scss';
+
+body {
+    font-family: 'Nunito', Helvetica, sans-serif;
+    font-size: 1.4rem;
+
+    h1 {
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+}

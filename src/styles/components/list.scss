@@ -1,0 +1,8 @@
+.list {
+    max-width: 960px;
+    margin: 12px auto;
+
+    &__item.is-complete {
+        background-color: rgba($color-green, 0.1);
+    }
+}
