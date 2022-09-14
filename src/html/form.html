@@ -1,5 +1,7 @@
 <form class="form js-form">
-    <label class="form__label" for="inpt">Please type your task!</label>
-    <input class="form__input js-input" id="inpt" name="to-do" required pattern=".*\S.*">
+    <label class="form__label" for="inpt-text">Please type your task!</label>
+    <input class="form__input js-input" id="inpt-text" name="to-do" required pattern=".*\S.*">
+    <label class="form__label" for="inpt-date">Please enter deadline!</label>
+    <input class="form__input js-input-date" required type="datetime-local" name="date" id="inpt-date">
     <button class="form__button js-submit-button">Create!</button>
 </form>

@@ -1,8 +1,13 @@
 .list {
     max-width: 960px;
     margin: 12px auto;
+    display: flex;
+    flex-direction: column;
 
-    &__item.is-complete {
-        background-color: rgba($color-green, 0.1);
+
+    &__item {
+        &.is-complete {
+            background-color: rgba($color-green, 0.1);
+        }
     }
 }

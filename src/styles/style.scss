@@ -1,7 +1,8 @@
 @import './base/nullstyle.scss', './base/colors.scss', './base/fonts.scss', './base/media/index.sass', './base/container.scss', './components/form.scss',
-'./components/list.scss', './components/card.scss';
+'./components/list.scss', './components/card.scss', './components/list-control.scss';
 
 body {
+    background-color: aliceblue;
     font-family: 'Nunito', Helvetica, sans-serif;
     font-size: 1.4rem;
 

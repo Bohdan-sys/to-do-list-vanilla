@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   padding: 0;
   margin: 0;
@@ -161,6 +163,10 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   display: -webkit-box;
@@ -175,13 +181,12 @@ h6 {
 
 .form__label {
   font-size: 1rem;
-  width: 100%;
 }
 
 .form__input {
   border: 1px solid black;
   font-size: 1.4rem;
-  margin: 20px 0;
+  margin: 10px 0 20px;
   padding: 4px 12px;
   height: 50px;
   width: 600px;
@@ -193,6 +198,7 @@ h6 {
   color: white;
   font-size: 1.6rem;
   height: 50px;
+  min-width: 92px;
   width: auto;
   display: inline-block;
   padding: 8px;
@@ -209,6 +215,13 @@ h6 {
 .list {
   max-width: 960px;
   margin: 12px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .list__item.is-complete {
@@ -219,6 +232,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px dashed #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,8 +240,17 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px;
-  border-bottom: 1px dashed #000;
+  padding: 60px 20px 20px;
+  position: relative;
+}
+
+.card__time {
+  background-color: #fcdf05;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 1.2rem;
+  padding: 12px;
 }
 
 .card__title {
@@ -279,7 +302,37 @@ h6 {
   background-color: #000;
 }
 
+.list-control__wrapper {
+  max-width: 960px;
+  margin: 12px auto;
+}
+
+.list-control__button {
+  background-color: #fff;
+  border: 1px dashed #000;
+  font-size: 1.2rem;
+  padding: 8px 20px 8px 8px;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.list-control__button::before {
+  content: "⇳";
+  font-size: 1.6rem;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.list-control__button:hover,
+.list-control__button:focus {
+  background-color: #fcdf05;
+  border-color: #fcdf05;
+}
+
 body {
+  background-color: aliceblue;
   font-family: "Nunito", Helvetica, sans-serif;
   font-size: 1.4rem;
 }
@@ -293,6 +346,10 @@ body h1 {
 @media (max-width: 767px) {
   .container {
     padding: 20px;
+  }
+
+  .form__input {
+    width: calc(100% - 40px);
   }
 
   .card {
