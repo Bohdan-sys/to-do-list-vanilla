@@ -52,6 +52,7 @@ export class ToDoList {
                 e.preventDefault();
                 if (Object.keys(this.editElement).length) {
                     this.editElement.text = this.input.value;
+                    this.editElement.deadline = this.inputDate.value;
                     this.data = this.data.map(element => element.id === this.editElement.id ? this.editElement : element);
                     this.submitButton.textContent = 'Create!'
                 } else {
