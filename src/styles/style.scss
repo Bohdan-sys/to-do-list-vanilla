@@ -1,14 +1,32 @@
-@import './base/nullstyle.scss', './base/colors.scss', './base/fonts.scss', './base/media/index.sass', './base/container.scss', './components/form.scss',
-'./components/list.scss', './components/card.scss', './components/list-control.scss';
+@import './base/nullstyle.scss', './base/colors.scss', './base/fonts.scss', './base/media/index.sass',
+'./base/container.scss', './base/animations.scss', './components/form.scss', './components/content.scss', './components/card.scss';
 
 body {
     background-color: aliceblue;
-    font-family: 'Nunito', Helvetica, sans-serif;
+    font-family: 'Poppins', Helvetica, sans-serif;
     font-size: 1.4rem;
 
-    h1 {
-        font-size: 5rem;
-        font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100vh;
+    width: 100%;
+
+    header,
+    footer {
+        flex-basis: auto;
+        flex-grow: 0;
+        width: 100%;
+        padding: 10px;
         text-align: center;
+    }
+
+    main {
+        flex-shrink: 0;
+    }
+
+    h1 {
+        font-size: 7rem;
+        font-weight: bold;
     }
 }

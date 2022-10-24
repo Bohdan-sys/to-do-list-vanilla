@@ -1,18 +1,18 @@
 @font-face {
     font-display: swap;
-    font-family: 'Nunito';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 300;
-    src: local('Nunito Light'), local('Nunito-Light'), url('../fonts/Nunito/Nunito-Light.woff2') format('woff2');
+    src: local('Poppins Light'), local('Poppins-Light'), url('../fonts/Poppins/Poppins-Light.woff2') format('woff2');
     // unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
     font-display: swap;
-    font-family: 'PNunito';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/Nunito/Nunito-Regular.woff2') format('woff2');
+    src: local('Poppins'), local('Poppins-Regular'), url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2');
     // unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -21,7 +21,7 @@
     font-family: 'Nunito';
     font-style: italic;
     font-weight: 400;
-    src: local('Nunito Italic'), local('Nunito-Italic'), url('../fonts/Nunito/Nunito-Italic.woff2') format('woff2');
+    src: local('Poppins Italic'), local('Poppins-Italic'), url('../fonts/Poppins/Poppins-Italic.woff2') format('woff2');
     // unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -30,24 +30,24 @@
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 500;
-    src: local('Nunito Medium'), local('Nunito-Medium'), url('../fonts/Nunito/Nunito-Medium.woff2') format('woff2');
+    src: local('Poppins Medium'), local('Poppins-Medium'), url('../fonts/Poppins/Poppins-Medium.woff2') format('woff2');
     // unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
     font-display: swap;
-    font-family: 'Nunito';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    src: local('Nunito Bold'), local('Nunito-Bold'), url('../fonts/Nunito/Nunito-Bold.woff2') format('woff2');
+    src: local('Poppins Bold'), local('Poppins-Bold'), url('../fonts/Poppins/Poppins-Bold.woff2') format('woff2');
     // unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
     font-display: swap;
-    font-family: 'Nunito';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
-    src: local('Nunito Black'), local('Nunito-Black'), url('../fonts/Nunito/Nunito-Black.woff2') format('woff2');
+    src: local('Poppins Black'), local('Poppins-Black'), url('../fonts/Poppins/Poppins-Black.woff2') format('woff2');
     // unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

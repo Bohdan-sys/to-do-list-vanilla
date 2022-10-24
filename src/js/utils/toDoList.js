@@ -1,15 +1,16 @@
 export class ToDoList {
     constructor(element) {
         this.element = element;
-        this.editElement = {};
         this.input = null;
         this.inputDate = null;
         this.submitButton = null;
+        this.content = null;
         this.sortButton = null;
         this.list = null;
         this.options = {
             input: '.js-input',
             inputDate: '.js-input-date',
+            content: '.js-content',
             submitButton: '.js-submit-button',
             sortButton: '.js-list-control',
             list: '.js-list'
@@ -20,29 +21,30 @@ export class ToDoList {
             editButton: 'js-edit-button',
             removeButton: 'js-remove-button',
             completeCheckbox: 'js-complete',
-            complete: 'is-complete'
+            complete: 'is-complete',
+            hidden: 'is-hidden'
         };
-
+        this.editElement = {};
         this.data = JSON.parse(localStorage.getItem('todos')) || [];
         this.sorted = false;
         this.init();
     }
 
     init() {
-        const { input, submitButton, sortButton, list, inputDate } = this.options;
+        const { input, submitButton, content, sortButton, list, inputDate } = this.options;
 
         if (this.element && typeof this.element === 'string') {
             this.element = document.querySelector(this.element);
-
-            this.input = document.querySelector(input);
-            this.inputDate = document.querySelector(inputDate);
-            this.submitButton = document.querySelector(submitButton);
-            this.sortButton = document.querySelector(sortButton);
-            this.list = document.querySelector(list);
+            this.input = this.element.querySelector(input);
+            this.inputDate = this.element.querySelector(inputDate);
+            this.submitButton = this.element.querySelector(submitButton);
+            this.content = document.querySelector(content)
+            this.sortButton = this.content.querySelector(sortButton);
+            this.list = this.content.querySelector(list);
         }
 
         this.createList();
-        this.checkSortButtonState();
+        this.checkContentState();
         this.addEvents();
     }
 
@@ -54,15 +56,16 @@ export class ToDoList {
                     this.editElement.text = this.input.value;
                     this.editElement.deadline = this.inputDate.value;
                     this.data = this.data.map(element => element.id === this.editElement.id ? this.editElement : element);
-                    this.submitButton.textContent = 'Create!'
+                    this.submitButton.textContent = 'Create!';
                 } else {
-                    const task = { id: this.createUid(), text: this.input.value, deadline: this.inputDate.value, complete: false }
+                    const task = { id: this.createUid(), text: this.input.value, deadline: this.inputDate.value, complete: false };
                     this.data.push(task);
+                    this.submitButton.textContent = 'Create!';
                 }
                 this.sortData();
                 this.updateStorage();
                 this.createList();
-                this.checkSortButtonState();
+                this.checkContentState();
                 this.input.value = '';
                 this.inputDate.value = '';
                 this.editElement = {};
@@ -92,7 +95,7 @@ export class ToDoList {
             this.data = this.data.filter(item => item.id !== listElement.dataset.uid);
             this.updateStorage();
             this.createList();
-            this.checkSortButtonState();
+            this.checkContentState();
             this.editElement = {};
         }
 
@@ -126,19 +129,16 @@ export class ToDoList {
     createElement(element, index) {
         if (this.list) {
             const item = `
-            <li class="list__item js-list-item ${element.complete ? this.classes.complete : ""}" data-uid="${element.id}">
+            <li class="content__list-item js-list-item ${element.complete ? this.classes.complete : ""}" data-uid="${element.id}">
                 <div class="card">
-                    <div class="card__text">
-                        <p class="card__time">
-                        Deadline: 
-                        ${new Date(element.deadline).toLocaleString("uk-UK", { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                        </p>
-                        <h2 class="card__title"><span>${index + 1}. </span>${element.text}</h2>
+                    <div class="card__number-wrapper">
+                        <span class="card__number">${index + 1}</span>
                     </div>
+                        <h2 class="card__title">${element.text}</h2>
                     <div class="card__actions">
                         <div class="card__complete">
                             <input type="checkbox" class="js-complete" id="${element.id}" ${element.complete ? "checked" : ""}/>
-                            <label for="${element.id}">Complete mark</label>
+                            <label for="${element.id}">${element.complete ? "Unmark as complete" : "Mark as complete"}</label>
                         </div>
                         <button class="card__edit js-edit-button">
                             edit
@@ -147,6 +147,12 @@ export class ToDoList {
                             remove
                         </button>
                     </div>
+                    <span class="card__time">
+                        Deadline: 
+                        ${new Date(element.deadline).toLocaleString("uk-UK", 
+                    { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }
+                        )}
+                    </span>
                 </div>
             </li>`;
             this.list.insertAdjacentHTML('beforeend', item)
@@ -155,16 +161,16 @@ export class ToDoList {
 
     createList() {
         this.list.innerHTML = '';
-        this.data.forEach((data, index) => {
-            this.createElement(data, index)
-        });
+        this.checkContentState();
+        this.data.forEach((data, index) => this.createElement(data, index));
+    }
+
+    checkContentState() {
+        const { hidden } = this.classes;
+        this.data.length ? this.content.classList.remove(hidden) : this.content.classList.add(hidden);
     }
 
     sortData() {
         this.data.sort((a, b) => this.sorted ? new Date(b.deadline) - new Date(a.deadline) : new Date(a.deadline) - new Date(b.deadline));
-    }
-
-    checkSortButtonState() {
-        this.data.length ? this.sortButton.style.display = 'block' : this.sortButton.style.display = 'none';
     }
 }

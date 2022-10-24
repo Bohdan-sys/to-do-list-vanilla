@@ -1,42 +1,74 @@
-.card {
-    align-items: center;
-    border-bottom: 1px dashed $color-black;
-    display: flex;
-    gap: 12px;
-    justify-content: space-between;
-    padding: 60px 20px 20px;
-    position: relative;
+$colors: $color-blue, $color-red, $color-yellow, $color-orange, $color-green, $color-indigo;
 
-    @include mq-till-md() {
-        align-items: flex-start;
-        flex-direction: column;
+@for $i from 1 through 20 {
+    .content__list-item:nth-child(#{length($colors)}n+#{$i}) {
+        .card {
+            background-color: nth($colors, random(length($colors)));
+        }
     }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 3px 6px rgba($color-black, 0.16);
 
     &__time {
-        background-color: $color-yellow;
-        position: absolute;
-        top: 0;
-        right: 20px;
+        background-color: rgba($color-white, 0.9);
+        display: block;
         font-size: 1.2rem;
         padding: 12px;
+
+        .is-complete & {
+            text-decoration: line-through;
+        }
+    }
+
+    &__number-wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        text-align: center;
+        width: 100%;
+        min-height: 100px;
+    }
+
+    &__number {
+        font-size: 7rem;
+        font-weight: 900;
+        color: $color-white;
     }
 
     &__title {
+        background-color: rgba($color-white, 0.7);
+        font-size: 2rem;
+        line-height: 1.2;
+        padding: 20px 12px;
+        height: 100%;
         width: 100%;
     }
 
     &__actions {
+        background-color: rgba($color-white, 0.7);
         align-items: center;
         display: flex;
-        gap: 12px;
-        flex-grow: 0;
+        flex-wrap: wrap;
+        gap: 4px;
+        justify-content: flex-end;
+        padding: 12px;
     }
 
     &__complete {
-        width: 120px;
+        align-items: center;
+        display: flex;
+        gap: 4px;
+        width: 100%;
 
         label {
-            font-size: 1rem;
+            line-height: 1.5;
+            font-size: 1.4rem;
         }
     }
 
@@ -51,7 +83,7 @@
     &__edit,
     &__remove {
         color: $color-white;
-        padding: 20px;
+        padding: 8px 10px;
         text-transform: uppercase;
         transition: .5s;
 
