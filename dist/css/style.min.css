@@ -250,6 +250,7 @@ h6 {
 
 .content {
   max-width: 920px;
+  width: 100%;
 }
 
 .content.is-hidden {
@@ -309,7 +310,7 @@ h6 {
 }
 
 .content__list-item:nth-child(6n+1) .card {
-  background-color: #f1d209;
+  background-color: #139f21;
 }
 
 .content__list-item:nth-child(6n+2) .card {
@@ -317,75 +318,75 @@ h6 {
 }
 
 .content__list-item:nth-child(6n+3) .card {
-  background-color: #3593df;
+  background-color: #7759ff;
 }
 
 .content__list-item:nth-child(6n+4) .card {
-  background-color: #ff4849;
-}
-
-.content__list-item:nth-child(6n+5) .card {
-  background-color: #ff4849;
-}
-
-.content__list-item:nth-child(6n+6) .card {
-  background-color: #7759ff;
-}
-
-.content__list-item:nth-child(6n+7) .card {
-  background-color: #f1d209;
-}
-
-.content__list-item:nth-child(6n+8) .card {
-  background-color: #e86530;
-}
-
-.content__list-item:nth-child(6n+9) .card {
-  background-color: #f1d209;
-}
-
-.content__list-item:nth-child(6n+10) .card {
-  background-color: #e86530;
-}
-
-.content__list-item:nth-child(6n+11) .card {
-  background-color: #3593df;
-}
-
-.content__list-item:nth-child(6n+12) .card {
-  background-color: #f1d209;
-}
-
-.content__list-item:nth-child(6n+13) .card {
   background-color: #139f21;
 }
 
-.content__list-item:nth-child(6n+14) .card {
-  background-color: #ff4849;
-}
-
-.content__list-item:nth-child(6n+15) .card {
-  background-color: #3593df;
-}
-
-.content__list-item:nth-child(6n+16) .card {
-  background-color: #ff4849;
-}
-
-.content__list-item:nth-child(6n+17) .card {
+.content__list-item:nth-child(6n+5) .card {
   background-color: #7759ff;
 }
 
-.content__list-item:nth-child(6n+18) .card {
-  background-color: #ff4849;
+.content__list-item:nth-child(6n+6) .card {
+  background-color: #e86530;
 }
 
-.content__list-item:nth-child(6n+19) .card {
+.content__list-item:nth-child(6n+7) .card {
+  background-color: #139f21;
+}
+
+.content__list-item:nth-child(6n+8) .card {
   background-color: #f1d209;
 }
 
-.content__list-item:nth-child(6n+20) .card {
+.content__list-item:nth-child(6n+9) .card {
+  background-color: #139f21;
+}
+
+.content__list-item:nth-child(6n+10) .card {
+  background-color: #139f21;
+}
+
+.content__list-item:nth-child(6n+11) .card {
+  background-color: #e86530;
+}
+
+.content__list-item:nth-child(6n+12) .card {
+  background-color: #ff4849;
+}
+
+.content__list-item:nth-child(6n+13) .card {
+  background-color: #ff4849;
+}
+
+.content__list-item:nth-child(6n+14) .card {
+  background-color: #7759ff;
+}
+
+.content__list-item:nth-child(6n+15) .card {
+  background-color: #7759ff;
+}
+
+.content__list-item:nth-child(6n+16) .card {
   background-color: #3593df;
+}
+
+.content__list-item:nth-child(6n+17) .card {
+  background-color: #3593df;
+}
+
+.content__list-item:nth-child(6n+18) .card {
+  background-color: #7759ff;
+}
+
+.content__list-item:nth-child(6n+19) .card {
+  background-color: #e86530;
+}
+
+.content__list-item:nth-child(6n+20) .card {
+  background-color: #139f21;
 }
 
 .card {
