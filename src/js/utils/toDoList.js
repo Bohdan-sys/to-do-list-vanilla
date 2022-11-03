@@ -38,7 +38,7 @@ export class ToDoList {
             this.input = this.element.querySelector(input);
             this.inputDate = this.element.querySelector(inputDate);
             this.submitButton = this.element.querySelector(submitButton);
-            this.content = document.querySelector(content)
+            this.content = document.querySelector(content);
             this.sortButton = this.content.querySelector(sortButton);
             this.list = this.content.querySelector(list);
         }
@@ -60,14 +60,12 @@ export class ToDoList {
                 } else {
                     const task = { id: this.createUid(), text: this.input.value, deadline: this.inputDate.value, complete: false };
                     this.data.push(task);
-                    this.submitButton.textContent = 'Create!';
                 }
                 this.sortData();
                 this.updateStorage();
                 this.createList();
                 this.checkContentState();
-                this.input.value = '';
-                this.inputDate.value = '';
+                this.element.reset();
                 this.editElement = {};
             });
         }
